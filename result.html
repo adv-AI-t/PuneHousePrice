@@ -1,0 +1,82 @@
+{% include "header.html" %}
+<header class="masthead" style="background-image: url('{{ area[1] }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>{{ area[0] }}</h1>
+                            <span class="subheading">Predicted Price According To Your Result</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</header>
+
+<main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+<h1>Choice Sumarry</h1>
+                    <hr>
+                    <table>
+                       <tr>
+                           <td>
+                               <label><b>No. of Bedrooms : </b>{{ form['bedroom'] }}</label>
+                           </td>
+                           <td>
+                                <label><b>Deposit : </b>{{ form['amount'] }}</label>
+                           </td>
+                           <td>
+                               {% if form['furnishing'] == '2' %}
+                               <label><b>Furnishing : </b>Fully Furnished</label>
+                               {% endif %}
+
+                               {% if form['furnishing'] == '1' %}
+                               <label><b>Furnishing : </b>Semi Furnished</label>
+                               {% endif %}
+
+                               {% if form['furnishing'] == '0' %}
+                               <label><b>Furnishing : </b>Not Furnished</label>
+                               {% endif %}
+
+                           </td>
+                       </tr>
+
+                        <tr>
+                           <td>
+                               <label><b>Floor No : </b>{{ form['floor'] }}</label>
+
+                           </td>
+                           <td>
+                                <label><b>Area : </b>{{ form['area'] }}</label>
+                           </td>
+                           <td>
+                                {% if form['propertyage'] == 0 %}
+                               <label><b>Usage : </b>0 to 1 Year</label>
+                               {% endif %}
+
+                               {% if form['propertyage'] == 1 %}
+                               <label><b>Usage : </b>1 to 5 Years</label>
+                               {% endif %}
+
+                               {% if form['propertyage'] == 2 %}
+                               <label><b>Usage : </b>5 to 10 Years</label>
+                               {% endif %}
+
+                               {% if form['propertyage'] == 3 %}
+                               <label><b>Usage : </b>10+</label>
+                               {% endif %}
+
+                           </td>
+                       </tr>
+                        <tr>
+                            <td>
+                                <h3>Rent : ₹{{ price }}</h3>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </main>
+
+{% include "footer.html" %}
