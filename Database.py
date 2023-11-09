@@ -4,7 +4,7 @@ import csv
 area_data = []
 
 # Read data from the CSV file
-with open('area data.csv', 'r') as csvfile:
+with open('Data/HTML data/area data.csv', 'r') as csvfile:
     # Create a CSV reader object
     csvreader = csv.reader(csvfile)
 
@@ -22,5 +22,4 @@ with open('area data.csv', 'r') as csvfile:
         if row[0] != 'Area Name':
             area_data.append(row)
 
-# Print the dictionary to verify the data
-print(area_data)
+
